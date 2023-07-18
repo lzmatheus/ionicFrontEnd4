@@ -60,7 +60,7 @@ export class CadastroPage implements OnInit {
 }
 
 
-refresh() {
+Atualizar() {
   this.dastro.sended = false;
   this.dastro.name = '';
   this.dastro.description = '';
