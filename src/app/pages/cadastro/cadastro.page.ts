@@ -12,7 +12,7 @@ export class CadastroPage implements OnInit {
   }
   constructor() { }
 
-  public dastro = {
+  public cadastrin = {
     name: '',
     description: '',
     location: '',
@@ -35,20 +35,20 @@ export class CadastroPage implements OnInit {
 
     // Valida preenchimento dos campos.
     if (
-      this.dastro.name.length < 3 ||
-      this.dastro.description.length < 5 ||
-      this.dastro.location.length < 10
+      this.cadastrin.name.length < 3 ||
+      this.cadastrin.description.length < 5 ||
+      this.cadastrin.location.length < 10
     ) return false;
 
   // Gera a data atual no formado ISO.
   const d = new Date();
-  this.dastro.date = d.toISOString().split('.')[0].replace('T', ' ');
+  this.cadastrin.date = d.toISOString().split('.')[0].replace('T', ' ');
 
  // Salva cadastro no Firestore.
- addDoc(this.cadastroCollection, this.dastro)
+ addDoc(this.cadastroCollection, this.cadastrin)
  .then((data) => {
    console.log('Contato salvo com Id :' + data.id)
-   this.dastro.sended = true;
+   this.cadastrin.sended = true;
  })
 
    
@@ -61,12 +61,12 @@ export class CadastroPage implements OnInit {
 
 
 Atualizar() {
-  this.dastro.sended = false;
-  this.dastro.name = '';
-  this.dastro.description = '';
-  this.dastro.location = '';
-  this.dastro.status = '';
-  this.dastro.date = 'received';
+  this.cadastrin.sended = false;
+  this.cadastrin.name = '';
+  this.cadastrin.description = '';
+  this.cadastrin.location = '';
+  this.cadastrin.status = '';
+  this.cadastrin.date = 'received';
 }
 
 }
